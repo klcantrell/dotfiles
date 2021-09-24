@@ -206,7 +206,7 @@ colorscheme dracula
 nnoremap <SPACE> <Nop>
 let mapleader = " "
 
-" from coc.nvim
+" from .coc.nvim
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
@@ -365,4 +365,5 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Add coc-prettier shortcut
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" end .coc-vim
 
