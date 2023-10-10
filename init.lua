@@ -35,6 +35,17 @@ are first encountering a few different constructs in your nvim config.
 I hope you enjoy your Neovim journey,
 - TJ
 
+-- netrw (disabled since I'm using nvim-tree)
+-- vim.g.netrw_banner = 0 -- Hide banner
+-- vim.g.netrw_liststyle = 3 -- Tree-style view
+-- vim.g.netrw_list_hide = "^\\./$" -- Hide current directory "dot"
+-- vim.g.netrw_hide = 1 -- Enable hiding immediately
+-- vim.g.netrw_altv = 1 -- Open with right splitting
+-- vim.g.netrw_preview = 1 -- Works with other settings for vertical splitting on open
+-- vim.g.netrw_browse_split = 4 -- Open in previous window
+-- vim.g.netrw_winsize = 80 -- Set width of netrw window
+
+
 P.S. You can delete this when you're done too. It's your config now :)
 --]]
 -- Set <space> as the leader key
@@ -42,6 +53,10 @@ P.S. You can delete this when you're done too. It's your config now :)
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -216,6 +231,18 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("nvim-tree").setup {}
+    end,
+  }
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -236,7 +263,7 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
@@ -430,8 +457,14 @@ local on_attach = function(_, bufnr)
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+
+  -- custom lsp mappings
   nmap('gH', vim.lsp.buf.document_highlight, '[H]ighlight symbols')
-  nmap('gC', vim.lsp.buf.clear_references, '[C]lear highlighted symbols')
+  nmap('gC', function()
+    vim.lsp.buf.clear_references()
+    vim.cmd [[nohlsearch]]
+  end, '[C]lear highlighted symbols')
+  nmap('<leader>f', vim.lsp.buf.format, '[F]ormat')
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -580,16 +613,6 @@ vim.opt.relativenumber = true
 vim.opt.wrap = false
 vim.opt.cursorline = true
 
--- netrw
-vim.g.netrw_banner = 0 -- Hide banner
-vim.g.netrw_liststyle = 3 -- Tree-style view
-vim.g.netrw_list_hide = "^\\./$" -- Hide current directory "dot"
-vim.g.netrw_hide = 1 -- Enable hiding immediately
--- vim.g.netrw_altv = 1 -- Open with right splitting
--- vim.g.netrw_preview = 1 -- Works with other settings for vertical splitting on open
--- vim.g.netrw_browse_split = 4 -- Open in previous window
--- vim.g.netrw_winsize = 80 -- Set width of netrw window
-
 vim.api.nvim_create_autocmd('filetype', {
   pattern = 'netrw',
   desc = 'Better mappings for netrw',
@@ -603,9 +626,18 @@ vim.api.nvim_create_autocmd('filetype', {
   end
 })
 
-
 -- this is needed for copilot's inline suggestions for some reason
 vim.g.copilot_assume_mapped = true
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+-- setup nvim-tree
+require("nvim-tree").setup({
+  view = {
+    width = 40,
+  }
+})
 
 -- swift lsp setup since it's not in mason
 local swift_lsp = vim.api.nvim_create_augroup("swift_lsp", { clear = true })
