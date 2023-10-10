@@ -263,7 +263,7 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- Set highlight on search
-vim.o.hlsearch = true
+vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
@@ -460,11 +460,9 @@ local on_attach = function(_, bufnr)
 
   -- custom lsp mappings
   nmap('gH', vim.lsp.buf.document_highlight, '[H]ighlight symbols')
-  nmap('gC', function()
-    vim.lsp.buf.clear_references()
-    vim.cmd [[nohlsearch]]
-  end, '[C]lear highlighted symbols')
+  nmap('gC', vim.lsp.buf.clear_references, '[C]lear highlighted symbols')
   nmap('<leader>f', vim.lsp.buf.format, '[F]ormat')
+  nmap('<leader>H', function() vim.cmd [[ set hlsearch! ]] end, 'Toggle [h]lsearch')
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -519,7 +517,13 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
+  rust_analyzer = {
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        command = "clippy",
+      },
+    },
+  },
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
