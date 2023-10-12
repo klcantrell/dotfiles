@@ -186,6 +186,14 @@ require('lazy').setup({
         component_separators = '|',
         section_separators = '',
       },
+      sections = {
+        lualine_c = {
+          {
+            'filename',
+            path = 1, -- show relative path in statusline
+          }
+        },
+      },
     },
   },
 
@@ -462,7 +470,8 @@ local on_attach = function(_, bufnr)
   nmap('gH', vim.lsp.buf.document_highlight, '[H]ighlight symbols')
   nmap('gC', vim.lsp.buf.clear_references, '[C]lear highlighted symbols')
   nmap('<leader>f', vim.lsp.buf.format, '[F]ormat')
-  nmap('<leader>H', function() vim.cmd [[ set hlsearch! ]] end, 'Toggle [h]lsearch')
+  vim.keymap.set('v', '<leader>f', vim.lsp.buf.format, { buffer = bufnr, desc = 'LSP: [F]ormat selected lines', noremap = true, })
+
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -640,6 +649,7 @@ vim.opt.termguicolors = true
 require("nvim-tree").setup({
   view = {
     width = 40,
+    relativenumber = true,
   }
 })
 
@@ -679,6 +689,8 @@ vim.api.nvim_set_keymap("n", "<", ":vertical res -3<CR>", { noremap = true })
 
 vim.api.nvim_set_keymap("v", "<leader>p", "\"_dP", { noremap = true })
 vim.api.nvim_set_keymap("v", "<leader>d", "\"_d", { noremap = true })
+vim.keymap.set("n", "<leader>H", function() vim.cmd [[ set hlsearch! ]] end,
+  { desc = 'Toggle [h]lsearch', noremap = true })
 
 vim.api.nvim_set_keymap("i", "<C-[", "<Esc>", { noremap = true })
 
