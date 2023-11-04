@@ -1,0 +1,167 @@
+{
+    "editor.fontFamily": "Cascadia Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.codeLensFontFamily": "Cascadia Code",
+    "[typescriptreact]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[typescript]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[css]": {
+        "editor.tabSize": 2,
+    },
+    "[json]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[markdown]": {
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 120,
+    },
+    "[swift]": {
+        "editor.inlayHints.enabled": "off"
+    },
+    "editor.cursorStyle": "line",
+    "editor.lineNumbers": "relative",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.fontLigatures": false,
+    "editor.rulers": [
+        120
+    ],
+    "editor.wordWrapColumn": 120,
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "vim.leader": "<space>",
+    "vim.surround": true,
+    "vim.textwidth": 120,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "#80a4c2",
+    "vim.insertModeKeyBindings": [
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<C-d>"],
+            "after": ["<C-d>", "z", "z"],
+        },
+        {
+            "before": ["<C-u>"],
+            "after": ["<C-u>", "z", "z"],
+        },
+        {
+            "before": ["n"],
+            "after": ["n", "z", "z"],
+        },
+        {
+            "before": ["N"],
+            "after": ["N", "z", "z"],
+        },
+        {
+            "before": ["Y"],
+            "after": ["y", "$"]
+        },
+        {
+            "before": ["<C-h>"],
+            "after": ["<C-w>", "h"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["<C-w>", "j"]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": ["<C-w>", "k"]
+        },
+        {
+            "before": ["<C-l>"],
+            "after": ["<C-w>", "l"]
+        },
+        {
+            "before": ["<leader>", "f"],
+            "commands": ["editor.action.formatDocument"],
+        },
+        {
+            "before": ["<leader>", "s"],
+            "commands": ["workbench.action.files.save"],
+        },
+        {
+            "before": ["<leader>", "p"],
+            "commands": ["editor.action.marker.next"],
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["<leader>", "p"],
+            "after": ["\"", "_", "d", "P"],
+        },
+        {
+            "before": ["<leader>", "d"],
+            "after": ["\"", "_", "d"],
+        },
+    ],
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "editor.fontSize": 13,
+    "terminal.integrated.fontSize": 13,
+    "editor.accessibilitySupport": "off",
+    "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.check.command": "clippy",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": true,
+    "notebook.lineNumbers": "on",
+    "omnisharp.organizeImportsOnFormat": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.compactFolders": false,
+    "csharpextensions.privateMemberPrefix": "_",
+    "csharpextensions.useThisForCtorAssignments": false,
+    "editor.guides.bracketPairs": true,
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "always",
+    "omnisharp.enableAsyncCompletion": true,
+    "playwright.reuseBrowser": true,
+    "svelte.enable-ts-plugin": true,
+    "debug.javascript.autoAttachFilter": "disabled",
+    "dart.lineLength": 120,
+    "python.languageServer": "Pylance",
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "editor.glyphMargin": true,
+    "terminal.external.osxExec": "Warp.app",
+    "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+    "lldb.launch.expressions": "native",
+    "perl.perlInc": [
+        "/Users/klcantrell_mac/perl5/lib/perl5"
+    ],
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Night Owl (No Italics)",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "window.title": " ",
+    "workbench.layoutControl.enabled": false,
+    "window.commandCenter": false,
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.location": "hidden"
+}
