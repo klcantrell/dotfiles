@@ -91,6 +91,22 @@
         {
             "before": ["<leader>", "e"],
             "commands": ["editor.action.marker.nextInFiles"],
+        },
+        {
+            "before": ["<leader>", "E"],
+            "commands": ["workbench.files.action.focusFilesExplorer"],
+        },
+        {
+            "before": ["<leader>", "T"],
+            "commands": ["workbench.action.terminal.focus"],
+        },
+        {
+            "before": ["<leader>", "G"],
+            "commands": ["workbench.scm.focus"],
+        },
+        {
+            "before": ["<leader>", "O"],
+            "commands": ["outline.focus"],
         }
     ],
     "vim.visualModeKeyBindings": [
