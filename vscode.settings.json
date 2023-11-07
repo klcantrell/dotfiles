@@ -89,8 +89,8 @@
             "commands": ["workbench.action.files.save"],
         },
         {
-            "before": ["<leader>", "p"],
-            "commands": ["editor.action.marker.next"],
+            "before": ["<leader>", "e"],
+            "commands": ["editor.action.marker.nextInFiles"],
         }
     ],
     "vim.visualModeKeyBindings": [
