@@ -2,9 +2,13 @@
 [
     { "key": "ctrl+`", "command": "workbench.action.terminal.focus"},
     { "key": "ctrl+`", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus"},
-    { "key": "alt+tab", "command": "workbench.action.focusActiveEditorGroup", "when": "filesExplorerFocus"},
-    { "key": "alt+tab", "command": "workbench.action.focusActiveEditorGroup", "when": "focusedView == 'workbench.scm'"},
-    { "key": "alt+tab", "command": "workbench.action.focusActiveEditorGroup", "when": "focusedView == 'outline'"},
+    { "key": "alt+tab", "command": "workbench.action.focusActiveEditorGroup" },
+    // { "key": "alt+tab", "command": "workbench.action.focusActiveEditorGroup", "when": "filesExplorerFocus"},
+    // { "key": "alt+tab", "command": "workbench.action.focusActiveEditorGroup", "when": "focusedView == 'workbench.scm'"},
+    // { "key": "alt+tab", "command": "workbench.action.focusActiveEditorGroup", "when": "focusedView == 'outline'"},
+    // { "key": "alt+tab", "command": "workbench.action.focusActiveEditorGroup", "when": "focusedView == 'workbench.view.search'"},
+    // { "key": "alt+tab", "command": "workbench.action.focusActiveEditorGroup", "when": "focusedView == 'workbench.panel.chat.view.copilot'"},
+    // { "key": "alt+tab", "command": "workbench.action.focusActiveEditorGroup", "when": "focusedView == 'workbench.view.debug'"},
     {
         "key": "ctrl+m ctrl+v",
         "command": "toggleVim"
@@ -22,5 +26,23 @@
         "key": "escape",
         "command": "-hideSuggestWidget",
         "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "a",
+        "command": "explorer.newFolder",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "n",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && !inputFocus"
     },
 ]
