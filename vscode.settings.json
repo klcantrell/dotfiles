@@ -128,6 +128,18 @@
             "before": ["g", "r"],
             "commands": ["editor.action.goToReferences"],
         },
+        {
+            "before": ["g", "R"],
+            "commands": ["references-view.findReferences"],
+        },
+        {
+            "before": ["g", "j"],
+            "commands": ["workbench.action.joinAllGroups"],
+        },
+        {
+            "before": ["g", "X"],
+            "commands": ["workbench.action.closeAllEditors"],
+        },
     ],
     "vim.visualModeKeyBindings": [
         {
@@ -150,32 +162,28 @@
         "editor.defaultFormatter": "vscode.html-language-features"
     },
     "rust-analyzer.inlayHints.chainingHints.enable": false,
-    "rust-analyzer.inlayHints.closingBraceHints.enable": false,
     "rust-analyzer.inlayHints.parameterHints.enable": false,
     "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.closingBraceHints.enable": false,
     "rust-analyzer.check.command": "clippy",
+    "[rust]": {
+        "editor.wordWrap": "off",
+    },
     "[python]": {
         "editor.formatOnType": true
     },
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
-    "julia.symbolCacheDownload": true,
-    "julia.enableTelemetry": true,
     "notebook.lineNumbers": "on",
-    "omnisharp.organizeImportsOnFormat": true,
     "workbench.iconTheme": "material-icon-theme",
     "explorer.compactFolders": false,
-    "csharpextensions.privateMemberPrefix": "_",
-    "csharpextensions.useThisForCtorAssignments": false,
     "editor.guides.bracketPairs": true,
     "editor.autoClosingBrackets": "always",
     "editor.autoClosingQuotes": "always",
-    "omnisharp.enableAsyncCompletion": true,
     "playwright.reuseBrowser": true,
     "svelte.enable-ts-plugin": true,
     "debug.javascript.autoAttachFilter": "disabled",
-    "dart.lineLength": 120,
     "python.languageServer": "Pylance",
     "editor.inlineSuggest.enabled": true,
     "github.copilot.enable": {
@@ -188,17 +196,14 @@
     "terminal.external.osxExec": "Warp.app",
     "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
     "lldb.launch.expressions": "native",
-    "perl.perlInc": [
-        "/Users/klcantrell_mac/perl5/lib/perl5"
-    ],
     "editor.minimap.enabled": false,
-    "window.zoomLevel": 1,
     "workbench.colorTheme": "Night Owl (No Italics)",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "window.title": " ",
-    "workbench.layoutControl.enabled": false,
-    "window.commandCenter": false,
     "workbench.sideBar.location": "right",
     "workbench.editor.focusRecentEditorAfterClose": false,
-    "workbench.activityBar.location": "hidden"
+    "workbench.activityBar.location": "hidden",
+    "workbench.layoutControl.enabled": false,
+    "window.commandCenter": false,
+    "window.zoomLevel": 1,
 }
