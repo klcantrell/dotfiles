@@ -45,4 +45,43 @@
         "command": "explorer.newFile",
         "when": "filesExplorerFocus && !inputFocus"
     },
+    {
+        "key": "shift+c",
+        "command": "workbench.files.action.collapseExplorerFolders",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+t ctrl+k",
+        "command": "workbench.action.terminal.kill"
+    },
+    {
+        "key": "ctrl+alt+=",
+        "command": "workbench.action.increaseViewSize"
+    },
+    {
+        "key": "ctrl+alt+-",
+        "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        "key": "ctrl+cmd+t",
+        "command": "toggle",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "rusttypehints",
+            "value": [
+                {
+                    "rust-analyzer.inlayHints.chainingHints.enable": false,
+                    "rust-analyzer.inlayHints.parameterHints.enable": false,
+                    "rust-analyzer.inlayHints.typeHints.enable": false,
+                    "rust-analyzer.inlayHints.closingBraceHints.enable": false
+                },
+                {
+                    "rust-analyzer.inlayHints.chainingHints.enable": true,
+                    "rust-analyzer.inlayHints.parameterHints.enable": true,
+                    "rust-analyzer.inlayHints.typeHints.enable": true,
+                    "rust-analyzer.inlayHints.closingBraceHints.enable": true
+                }
+            ]
+        }
+    }
 ]
