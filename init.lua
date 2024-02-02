@@ -81,7 +81,8 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
-  'github/copilot.vim',
+  -- disable while I'm on a client project
+  -- 'github/copilot.vim',
 
   -- Git related plugins
   'tpope/vim-fugitive',
@@ -126,7 +127,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -174,6 +175,7 @@ require('lazy').setup({
       vim.cmd.colorscheme 'onedark'
     end,
   },
+
 
   {
     -- Set lualine as statusline
@@ -249,7 +251,8 @@ require('lazy').setup({
     config = function()
       require("nvim-tree").setup {}
     end,
-  }
+  },
+  { "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -335,6 +338,7 @@ require('onedark').setup {
   }
 }
 require('onedark').load()
+
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
@@ -470,7 +474,8 @@ local on_attach = function(_, bufnr)
   nmap('gH', vim.lsp.buf.document_highlight, '[H]ighlight symbols')
   nmap('gC', vim.lsp.buf.clear_references, '[C]lear highlighted symbols')
   nmap('<leader>f', vim.lsp.buf.format, '[F]ormat')
-  vim.keymap.set('v', '<leader>f', vim.lsp.buf.format, { buffer = bufnr, desc = 'LSP: [F]ormat selected lines', noremap = true, })
+  vim.keymap.set('v', '<leader>f', vim.lsp.buf.format,
+    { buffer = bufnr, desc = 'LSP: [F]ormat selected lines', noremap = true, })
 
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
@@ -626,6 +631,14 @@ vim.opt.relativenumber = true
 vim.opt.wrap = false
 vim.opt.cursorline = true
 
+-- Set fold settings
+-- These options were reccommended by nvim-ufo
+-- See: https://github.com/kevinhwang91/nvim-ufo#minimal-configuration
+vim.opt.foldcolumn = "0"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+
 vim.api.nvim_create_autocmd('filetype', {
   pattern = 'netrw',
   desc = 'Better mappings for netrw',
@@ -651,6 +664,13 @@ require("nvim-tree").setup({
     width = 40,
     relativenumber = true,
   }
+})
+
+-- setup ufo
+require("ufo").setup({
+  provider_selector = function(_bufnr, _filetype, _buftype)
+    return { "treesitter", "indent" }
+  end,
 })
 
 -- swift lsp setup since it's not in mason
@@ -685,14 +705,16 @@ vim.api.nvim_set_keymap("n", "n", "nzz", { noremap = true })
 vim.api.nvim_set_keymap("n", "+", ":res +2<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "_", ":res -2<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", ">", ":vertical res +2<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<", ":vertical res -3<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<", ":vertical res -2<CR>", { noremap = true })
 
 vim.api.nvim_set_keymap("v", "<leader>p", "\"_dP", { noremap = true })
 vim.api.nvim_set_keymap("v", "<leader>d", "\"_d", { noremap = true })
 vim.keymap.set("n", "<leader>H", function() vim.cmd [[ set hlsearch! ]] end,
   { desc = 'Toggle [h]lsearch', noremap = true })
+vim.keymap.set("n", "<leader>E", function() vim.cmd [[ NvimTreeToggle ]] end,
+  { desc = 'Toggle file [E]xplorer with nvim-tree', noremap = true })
 
-vim.api.nvim_set_keymap("i", "<C-[", "<Esc>", { noremap = true })
+-- vim.api.nvim_set_keymap("i", "<C-[", "<Esc>", { noremap = true })
 
 -- emulate surround add bindings
 
