@@ -55,11 +55,11 @@
         "command": "workbench.action.terminal.kill"
     },
     {
-        "key": "ctrl+alt+=",
+        "key": "ctrl+cmd+=",
         "command": "workbench.action.increaseViewSize"
     },
     {
-        "key": "ctrl+alt+-",
+        "key": "ctrl+cmd+-",
         "command": "workbench.action.decreaseViewSize"
     },
     {
