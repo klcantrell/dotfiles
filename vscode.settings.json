@@ -1,6 +1,6 @@
 {
-    "editor.fontFamily": "'CaskaydiaCove Nerd Font Mono', 'Courier New', monospace",
-    "editor.codeLensFontFamily": "'CaskaydiaCove Nerd Font Mono'",
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'Courier New', monospace",
+    "editor.codeLensFontFamily": "'CaskaydiaCove Nerd Font'",
     "[typescriptreact]": {
         "editor.tabSize": 2,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -27,17 +27,16 @@
     "[swift]": {
         "editor.inlayHints.enabled": "off"
     },
-    "editor.cursorStyle": "line",
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "relative",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     "editor.fontLigatures": false,
     "editor.rulers": [
         120
     ],
     "editor.wordWrapColumn": 120,
-    "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniforge/base/envs/env1/bin/python",
+    "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniforge/base/envs/python_3.11/bin/python",
     "mypy-type-checker.args": ["--ignore-missing-imports"],
-    "mypy-type-checker.path": ["/opt/homebrew/Caskroom/miniforge/base/envs/python_3.12/bin/mypy"],
+    "mypy-type-checker.path": ["/opt/homebrew/Caskroom/miniforge/base/envs/python_3.11/bin/mypy"],
     "vim.leader": "<space>",
     "vim.surround": true,
     "vim.textwidth": 120,
@@ -53,6 +52,14 @@
         {
             "before": ["<C-u>"],
             "after": ["<C-u>", "z", "z"],
+        },
+        {
+            "before": ["<C-f>"],
+            "after": ["<C-f>", "z", "z"],
+        },
+        {
+            "before": ["<C-b>"],
+            "after": ["<C-b>", "z", "z"],
         },
         {
             "before": ["n"],
@@ -154,7 +161,8 @@
         },
     ],
     "extensions.experimental.affinity": {
-        "vscodevim.vim": 1
+        "vscodevim.vim": 1,
+        "asvetliakov.vscode-neovim": 1
     },
     "editor.fontSize": 14,
     "terminal.integrated.fontSize": 13,
@@ -200,15 +208,35 @@
     "lldb.launch.expressions": "native",
     "editor.minimap.enabled": false,
     "workbench.colorTheme": "Night Owl (No Italics)",
-    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font Mono'",
+    "terminal.integrated.fontFamily": "'MesloLGS NF'",
     "window.title": " ",
     "workbench.sideBar.location": "right",
     "workbench.editor.focusRecentEditorAfterClose": false,
-    "workbench.layoutControl.enabled": false,
-    "window.commandCenter": false,
     "window.zoomLevel": 1,
     "diffEditor.codeLens": true,
-    "continue.enableTabAutocomplete": false,
+    "continue.enableTabAutocomplete": true,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "tailwindCSS.classAttributes": ["class", "className", "classNames", "ngClass", "class:list", ".*ClassName"],
+    // see https://www.tailwind-variants.org/docs/getting-started#intellisense-setup-optional
+    // and https://github.com/lukeed/clsx?tab=readme-ov-file#tailwind-support that provided the original regex
+    // tweaked for my needs
+    "tailwindCSS.experimental.classRegex": [
+      ["(?:clsx|cn|appTv|tv)\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+      ""
+    ],
+    "maui.configuration.androidSdkPreferredPath": "/Users/klcantrell/Library/Android/sdk",
+    "maui.configuration.javaSdkPreferredPath": "/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home",
+    "editor.hover.delay": 600,
+    "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
     "workbench.activityBar.location": "hidden",
-    "terminal.integrated.defaultProfile.osx": "zsh"
+    "chat.commandCenter.enabled": false,
+    "workbench.layoutControl.enabled": false,
+    "window.commandCenter": false,
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+    // helps with neovim constantly popping up output view
+    // see https://github.com/vscode-neovim/vscode-neovim/issues/2099 
+    "workbench.view.showQuietly": {
+      "workbench.panel.output": true
+    }
 }
