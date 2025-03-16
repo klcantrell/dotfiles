@@ -10,8 +10,18 @@
     // { "key": "alt+tab", "command": "workbench.action.focusActiveEditorGroup", "when": "focusedView == 'workbench.panel.chat.view.copilot'"},
     // { "key": "alt+tab", "command": "workbench.action.focusActiveEditorGroup", "when": "focusedView == 'workbench.view.debug'"},
     {
-        "key": "ctrl+m ctrl+v",
-        "command": "toggleVim"
+      "key": "ctrl+m ctrl+n",
+      "when": "neovim.init",
+      "command": "vscode-neovim.stop"
+    },
+    {
+      "key": "ctrl+m ctrl+n",
+      "when": "!neovim.init",
+      "command": "vscode-neovim.restart"
+    },
+    {
+      "key": "ctrl+m ctrl+v",
+      "command": "toggleVim"
     },
     {
         "key": "shift+cmd+'",
@@ -35,21 +45,21 @@
         "key": "ctrl+shift+tab",
         "command": "workbench.action.previousEditor"
     },
-    {
-        "key": "a",
-        "command": "explorer.newFolder",
-        "when": "filesExplorerFocus && !inputFocus"
-    },
-    {
-        "key": "n",
-        "command": "explorer.newFile",
-        "when": "filesExplorerFocus && !inputFocus"
-    },
-    {
-        "key": "shift+c",
-        "command": "workbench.files.action.collapseExplorerFolders",
-        "when": "filesExplorerFocus && !inputFocus"
-    },
+    // {
+    //     "key": "a",
+    //     "command": "explorer.newFolder",
+    //     "when": "filesExplorerFocus && !inputFocus"
+    // },
+    // {
+    //     "key": "n",
+    //     "command": "explorer.newFile",
+    //     "when": "filesExplorerFocus && !inputFocus"
+    // },
+    // {
+    //     "key": "shift+c",
+    //     "command": "workbench.files.action.collapseExplorerFolders",
+    //     "when": "filesExplorerFocus && !inputFocus"
+    // },
     {
         "key": "ctrl+t ctrl+k",
         "command": "workbench.action.terminal.kill"
@@ -61,6 +71,11 @@
     {
         "key": "ctrl+cmd+-",
         "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "closeFindWidget",
+        "when": "findWidgetVisible"
     },
     {
         "key": "ctrl+cmd+t",
@@ -83,5 +98,121 @@
                 }
             ]
         }
-    }
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "continue.continueGUIView.focus"
+    },
+    {
+        "key": "ctrl+'",
+        "command": "editor.action.inlineSuggest.trigger"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "editor.action.inlineSuggest.hide",
+        "when": "inlineEditIsVisible || inlineSuggestionVisible"
+    },
+    {
+        "key": "escape",
+        "command": "-editor.action.inlineSuggest.hide",
+        "when": "inlineEditIsVisible || inlineSuggestionVisible"
+    },
+    // {
+    //     "key": "ctrl+shift+c",
+    //     "command": "workbench.panel.chat.view.copilot.focus"
+    // }
+    {
+      "key": "ctrl+u",
+      "command": "-vscode-neovim.ctrl-u",
+      "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+    },
+    {
+      "key": "ctrl+d",
+      "command": "-vscode-neovim.ctrl-d",
+      "when": "editorTextFocus && neovim.ctrlKeysNormal.d && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+    },
+    {
+      "key": "ctrl+u",
+      "command": "runCommands",
+      "when": "editorTextFocus && neovim.init && neovim.mode != 'insert'",
+      "args": {
+        "commands": [
+          {
+            "command": "editorScroll",
+            "args": {
+              "to": "up",
+              "by": "halfPage"
+            }
+          },
+          {
+            "command": "cursorMove",
+            "args": { "to": "viewPortCenter" }
+          }
+        ]
+      }
+    },
+    {
+      "key": "ctrl+d",
+      "command": "runCommands",
+      "when": "editorTextFocus && neovim.init && neovim.mode != 'insert'",
+      "args": {
+        "commands": [
+          {
+            "command": "editorScroll",
+            "args": {
+              "to": "down",
+              "by": "halfPage"
+            }
+          },
+          {
+            "command": "cursorMove",
+            "args": { "to": "viewPortCenter" }
+          }
+        ]
+      }
+    },
+    {
+      "key": "n",
+      "command": "runCommands",
+      "when": "editorTextFocus && neovim.init && neovim.mode != 'insert'",
+      "args": {
+        "commands": [
+          {
+            "command": "vscode-neovim.send",
+            "args": "n"
+          },
+          {
+            "command": "vscode-neovim.send",
+            "args": "eb"
+          },
+          // above eb is needed as a throwaway otherwise zz is ignored
+          {
+            "command": "vscode-neovim.send",
+            "args": "zz"
+          },
+        ]
+      }
+    },
+    {
+      "key": "shift+n",
+      "command": "runCommands",
+      "when": "editorTextFocus && neovim.init && neovim.mode != 'insert'",
+      "args": {
+        "commands": [
+          {
+            "command": "vscode-neovim.send",
+            "args": "N"
+          },
+          {
+            "command": "vscode-neovim.send",
+            "args": "eb"
+          },
+          // above eb is needed as a throwaway otherwise zz is ignored
+          {
+            "command": "vscode-neovim.send",
+            "args": "zz"
+          },
+        ]
+      }
+    },
 ]
