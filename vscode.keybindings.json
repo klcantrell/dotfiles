@@ -28,7 +28,7 @@
         "command": "workbench.action.toggleActivityBarVisibility"
     },
     {
-        "key": "ctrl+\\",
+        "key": "ctrl+shift+\\",
         "command": "hideSuggestWidget",
         "when": "suggestWidgetVisible && textInputFocus"
     },
@@ -100,10 +100,6 @@
         }
     },
     {
-        "key": "ctrl+shift+c",
-        "command": "continue.continueGUIView.focus"
-    },
-    {
         "key": "ctrl+'",
         "command": "editor.action.inlineSuggest.trigger"
     },
@@ -117,10 +113,10 @@
         "command": "-editor.action.inlineSuggest.hide",
         "when": "inlineEditIsVisible || inlineSuggestionVisible"
     },
-    // {
-    //     "key": "ctrl+shift+c",
-    //     "command": "workbench.panel.chat.view.copilot.focus"
-    // }
+    {
+      "key": "ctrl+shift+c",
+      "command": "claude-vscode.editor.openLast"
+    },
     {
       "key": "ctrl+u",
       "command": "-vscode-neovim.ctrl-u",
@@ -131,45 +127,50 @@
       "command": "-vscode-neovim.ctrl-d",
       "when": "editorTextFocus && neovim.ctrlKeysNormal.d && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
     },
+    // https://github.com/vscode-neovim/vscode-neovim/issues/2434
     {
       "key": "ctrl+u",
       "command": "runCommands",
-      "when": "editorTextFocus && neovim.init && neovim.mode != 'insert'",
       "args": {
         "commands": [
           {
-            "command": "editorScroll",
-            "args": {
-              "to": "up",
-              "by": "halfPage"
-            }
+            "command": "vscode-neovim.send",
+            "args": "<C-u>"
           },
           {
-            "command": "cursorMove",
-            "args": { "to": "viewPortCenter" }
-          }
+            "command": "vscode-neovim.send",
+            "args": "zz"
+          },
+          // above zz is needed as a throwaway otherwise zz is ignored
+          {
+            "command": "vscode-neovim.send",
+            "args": "zz"
+          },
         ]
-      }
+      },
+      "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
     },
     {
       "key": "ctrl+d",
       "command": "runCommands",
-      "when": "editorTextFocus && neovim.init && neovim.mode != 'insert'",
       "args": {
         "commands": [
           {
-            "command": "editorScroll",
-            "args": {
-              "to": "down",
-              "by": "halfPage"
-            }
+            "command": "vscode-neovim.send",
+            "args": "<C-d>"
           },
           {
-            "command": "cursorMove",
-            "args": { "to": "viewPortCenter" }
-          }
+            "command": "vscode-neovim.send",
+            "args": "zz"
+          },
+          // above zz is needed as a throwaway otherwise zz is ignored
+          {
+            "command": "vscode-neovim.send",
+            "args": "zz"
+          },
         ]
-      }
+      },
+      "when": "editorTextFocus && neovim.ctrlKeysNormal.d && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
     },
     {
       "key": "n",
@@ -183,9 +184,9 @@
           },
           {
             "command": "vscode-neovim.send",
-            "args": "eb"
+            "args": "zz"
           },
-          // above eb is needed as a throwaway otherwise zz is ignored
+          // above zz is needed as a throwaway otherwise zz is ignored
           {
             "command": "vscode-neovim.send",
             "args": "zz"
@@ -205,9 +206,9 @@
           },
           {
             "command": "vscode-neovim.send",
-            "args": "eb"
+            "args": "zz"
           },
-          // above eb is needed as a throwaway otherwise zz is ignored
+          // above zz is needed as a throwaway otherwise zz is ignored
           {
             "command": "vscode-neovim.send",
             "args": "zz"
@@ -215,4 +216,17 @@
         ]
       }
     },
+    {
+      "key": "ctrl+w",
+      "command": "workbench.action.switchWindow"
+    },
+    {
+      "key": "shift+cmd+r",
+      "command": "references-view.tree.focus"
+    },
+    {
+      "key": "shift+cmd+e",
+      "command": "workbench.view.explorer",
+      "when": "viewContainer.workbench.view.explorer.enabled"
+    }
 ]
