@@ -1,242 +1,303 @@
 {
-    "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'Courier New', monospace",
-    "editor.codeLensFontFamily": "'CaskaydiaCove Nerd Font'",
-    "[typescriptreact]": {
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-    },
-    "[typescript]": {
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-    },
-    "[javascript]": {
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-    },
-    "[css]": {
-        "editor.tabSize": 2,
-    },
-    "[json]": {
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-    },
-    "[markdown]": {
-        "editor.wordWrap": "bounded",
-        "editor.wordWrapColumn": 120,
-    },
-    "[swift]": {
-        "editor.inlayHints.enabled": "off"
-    },
-    "editor.lineNumbers": "relative",
-    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-    "editor.fontLigatures": false,
-    "editor.rulers": [
-        120
-    ],
+  "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'Courier New', monospace",
+  "editor.codeLensFontFamily": "'CaskaydiaCove Nerd Font'",
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[css]": {
+    "editor.tabSize": 2,
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[markdown]": {
+    "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 120,
-    "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniforge/base/envs/python_3.11/bin/python",
-    "mypy-type-checker.args": ["--ignore-missing-imports"],
-    "mypy-type-checker.path": ["/opt/homebrew/Caskroom/miniforge/base/envs/python_3.11/bin/mypy"],
-    "vim.leader": "<space>",
-    "vim.surround": true,
-    "vim.textwidth": 120,
-    "vim.highlightedyank.enable": true,
-    "vim.highlightedyank.color": "#80a4c2",
-    "vim.insertModeKeyBindings": [
-    ],
-    "vim.normalModeKeyBindings": [
-        {
-            "before": ["<C-d>"],
-            "after": ["<C-d>", "z", "z"],
-        },
-        {
-            "before": ["<C-u>"],
-            "after": ["<C-u>", "z", "z"],
-        },
-        {
-            "before": ["<C-f>"],
-            "after": ["<C-f>", "z", "z"],
-        },
-        {
-            "before": ["<C-b>"],
-            "after": ["<C-b>", "z", "z"],
-        },
-        {
-            "before": ["n"],
-            "after": ["n", "z", "z"],
-        },
-        {
-            "before": ["N"],
-            "after": ["N", "z", "z"],
-        },
-        {
-            "before": ["Y"],
-            "after": ["y", "$"]
-        },
-        {
-            "before": ["<C-h>"],
-            "after": ["<C-w>", "h"]
-        },
-        {
-            "before": ["<C-j>"],
-            "after": ["<C-w>", "j"]
-        },
-        {
-            "before": ["<C-k>"],
-            "after": ["<C-w>", "k"]
-        },
-        {
-            "before": ["<C-l>"],
-            "after": ["<C-w>", "l"]
-        },
-        {
-            "before": ["<leader>", "f"],
-            "commands": ["editor.action.formatDocument"],
-        },
-        {
-            "before": ["<leader>", "s"],
-            "commands": ["workbench.action.files.save"],
-        },
-        {
-            "before": ["<leader>", "e"],
-            "commands": ["editor.action.marker.nextInFiles"],
-        },
-        {
-            "before": ["<leader>", "w"],
-            "commands": ["editor.action.marker.prevInFiles"],
-        },
-        {
-            "before": ["<leader>", "E"],
-            "commands": ["workbench.files.action.focusFilesExplorer"],
-        },
-        {
-            "before": ["<leader>", "T"],
-            "commands": ["workbench.action.terminal.focus"],
-        },
-        {
-            "before": ["<leader>", "G"],
-            "commands": ["workbench.scm.focus"],
-        },
-        {
-            "before": ["<leader>", "O"],
-            "commands": ["outline.focus"],
-        },
-        {
-            "before": ["<leader>", "D"],
-            "commands": ["workbench.view.debug"],
-        },
-        {
-            "before": ["<leader>", "P"],
-            "commands": ["togglePeekWidgetFocus"],
-        },
-        {
-            "before": ["<leader>", "C"],
-            "commands": ["workbench.panel.chat.view.copilot.focus"],
-        },
-        {
-            "before": ["g", "r"],
-            "commands": ["editor.action.goToReferences"],
-        },
-        {
-            "before": ["g", "R"],
-            "commands": ["references-view.findReferences"],
-        },
-        {
-            "before": ["g", "j"],
-            "commands": ["workbench.action.joinAllGroups"],
-        },
-        {
-            "before": ["g", "X"],
-            "commands": ["workbench.action.closeAllEditors"],
-        },
-    ],
-    "vim.visualModeKeyBindings": [
-        {
-            "before": ["<leader>", "p"],
-            "after": ["\"", "_", "d", "P"],
-        },
-        {
-            "before": ["<leader>", "d"],
-            "after": ["\"", "_", "d"],
-        },
-    ],
-    "extensions.experimental.affinity": {
-        "vscodevim.vim": 1,
-        "asvetliakov.vscode-neovim": 1
+  },
+  "[swift]": {
+    "editor.inlayHints.enabled": "off",
+  },
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.fontLigatures": false,
+  "editor.rulers": [120],
+  "editor.wordWrapColumn": 120,
+  "vim.leader": "<space>",
+  "vim.surround": true,
+  "vim.textwidth": 120,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#80a4c2",
+  "vim.insertModeKeyBindings": [],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"],
     },
-    "editor.fontSize": 14,
-    "terminal.integrated.fontSize": 13,
-    "editor.accessibilitySupport": "off",
-    "typescript.tsserver.experimental.enableProjectDiagnostics": true,
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"],
     },
-    "rust-analyzer.inlayHints.chainingHints.enable": false,
-    "rust-analyzer.inlayHints.parameterHints.enable": false,
-    "rust-analyzer.inlayHints.typeHints.enable": false,
-    "rust-analyzer.inlayHints.closingBraceHints.enable": false,
-    "rust-analyzer.check.command": "clippy",
-    "[rust]": {
-        "editor.wordWrap": "off",
+    {
+      "before": ["<C-f>"],
+      "after": ["<C-f>", "z", "z"],
     },
-    "[python]": {
-        "editor.formatOnType": true
+    {
+      "before": ["<C-b>"],
+      "after": ["<C-b>", "z", "z"],
     },
-    "terminal.integrated.commandsToSkipShell": [
-        "language-julia.interrupt"
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z"],
+    },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z"],
+    },
+    {
+      "before": ["Y"],
+      "after": ["y", "$"],
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["<C-w>", "h"],
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["<C-w>", "j"],
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["<C-w>", "k"],
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["<C-w>", "l"],
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatDocument"],
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.files.save"],
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["editor.action.marker.nextInFiles"],
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["editor.action.marker.prevInFiles"],
+    },
+    {
+      "before": ["<leader>", "E"],
+      "commands": ["workbench.files.action.focusFilesExplorer"],
+    },
+    {
+      "before": ["<leader>", "T"],
+      "commands": ["workbench.action.terminal.focus"],
+    },
+    {
+      "before": ["<leader>", "G"],
+      "commands": ["workbench.scm.focus"],
+    },
+    {
+      "before": ["<leader>", "O"],
+      "commands": ["outline.focus"],
+    },
+    {
+      "before": ["<leader>", "D"],
+      "commands": ["workbench.view.debug"],
+    },
+    {
+      "before": ["<leader>", "P"],
+      "commands": ["togglePeekWidgetFocus"],
+    },
+    {
+      "before": ["<leader>", "C"],
+      "commands": ["workbench.panel.chat.view.copilot.focus"],
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"],
+    },
+    {
+      "before": ["g", "R"],
+      "commands": ["references-view.findReferences"],
+    },
+    {
+      "before": ["g", "j"],
+      "commands": ["workbench.action.joinAllGroups"],
+    },
+    {
+      "before": ["g", "X"],
+      "commands": ["workbench.action.closeAllEditors"],
+    },
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"", "_", "d", "P"],
+    },
+    {
+      "before": ["<leader>", "d"],
+      "after": ["\"", "_", "d"],
+    },
+  ],
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1,
+    "asvetliakov.vscode-neovim": 1,
+  },
+  "editor.fontSize": 12.5,
+  "terminal.integrated.fontSize": 12.5,
+  "editor.accessibilitySupport": "off",
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "rust-analyzer.check.command": "clippy",
+  "[rust]": {
+    "editor.wordWrap": "off",
+  },
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+  },
+  "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "notebook.focusedCellBorder": "#c792ea",
+    "statusBar.debuggingBackground": "#9445c9",
+  },
+  "explorer.compactFolders": false,
+  "editor.guides.bracketPairs": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "playwright.reuseBrowser": true,
+  "svelte.enable-ts-plugin": true,
+  "debug.javascript.autoAttachFilter": "disabled",
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+  },
+  "editor.glyphMargin": true,
+  "terminal.external.osxExec": "Warp.app",
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "lldb.launch.expressions": "native",
+  "editor.minimap.enabled": false,
+  "terminal.integrated.fontFamily": "'MesloLGS NF'",
+  // "window.title": " ",
+  "workbench.editor.focusRecentEditorAfterClose": false,
+  "window.zoomLevel": 1,
+  "diffEditor.codeLens": true,
+  "continue.enableTabAutocomplete": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "classNames",
+    "ngClass",
+    "class:list",
+    ".*ClassName",
+  ],
+  // see https://www.tailwind-variants.org/docs/getting-started#intellisense-setup-optional
+  // and https://github.com/lukeed/clsx?tab=readme-ov-file#tailwind-support that provided the original regex
+  // tweaked for my needs
+  "tailwindCSS.experimental.classRegex": [
+    ["(?:clsx|cn|appTv|tv)\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    "",
+  ],
+  "maui.configuration.androidSdkPreferredPath": "/Users/klcantrell/Library/Android/sdk",
+  "maui.configuration.javaSdkPreferredPath": "/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home",
+  "editor.hover.delay": 600,
+  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  // helps with neovim constantly popping up output view
+  // see https://github.com/vscode-neovim/vscode-neovim/issues/2099
+  "workbench.view.showQuietly": {
+    "workbench.panel.output": true,
+  },
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "files.associations": {
+    "*pipeline.yml": "azure-pipelines",
+  },
+  "chat.agent.enabled": true,
+  "workbench.sideBar.location": "right",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "java.import.gradle.java.home": "/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home",
+  "notebook.output.wordWrap": true,
+  "workbench.editorAssociations": {
+    "*.svg": "default",
+  },
+  "docker.extension.enableComposeLanguageServer": false,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true,
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+  },
+  "dotnet.codeLens.enableTestsCodeLens": true,
+  "chat.commandCenter.enabled": false,
+  "files.autoSave": "onFocusChange",
+  "terminal.integrated.macOptionIsMeta": true,
+  "terminal.integrated.suggest.enabled": false,
+  "claudeCode.preferredLocation": "sidebar",
+  "yaml.schemas": {
+    "file:///Users/klcantrell/.vscode/extensions/continue.continue-1.2.11-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
     ],
-    "notebook.lineNumbers": "on",
-    "workbench.iconTheme": "material-icon-theme",
-    "explorer.compactFolders": false,
-    "editor.guides.bracketPairs": true,
-    "editor.autoClosingBrackets": "always",
-    "editor.autoClosingQuotes": "always",
-    "playwright.reuseBrowser": true,
-    "svelte.enable-ts-plugin": true,
-    "debug.javascript.autoAttachFilter": "disabled",
-    "python.languageServer": "Pylance",
-    "editor.inlineSuggest.enabled": true,
-    "github.copilot.enable": {
-        "*": true,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false
-    },
-    "editor.glyphMargin": true,
-    "terminal.external.osxExec": "Warp.app",
-    "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
-    "lldb.launch.expressions": "native",
-    "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Night Owl (No Italics)",
-    "terminal.integrated.fontFamily": "'MesloLGS NF'",
-    "window.title": " ",
-    "workbench.sideBar.location": "right",
-    "workbench.editor.focusRecentEditorAfterClose": false,
-    "window.zoomLevel": 1,
-    "diffEditor.codeLens": true,
-    "continue.enableTabAutocomplete": true,
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "tailwindCSS.classAttributes": ["class", "className", "classNames", "ngClass", "class:list", ".*ClassName"],
-    // see https://www.tailwind-variants.org/docs/getting-started#intellisense-setup-optional
-    // and https://github.com/lukeed/clsx?tab=readme-ov-file#tailwind-support that provided the original regex
-    // tweaked for my needs
-    "tailwindCSS.experimental.classRegex": [
-      ["(?:clsx|cn|appTv|tv)\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
-      ""
+    "file:///Users/klcantrell/.vscode/extensions/continue.continue-1.2.14-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
     ],
-    "maui.configuration.androidSdkPreferredPath": "/Users/klcantrell/Library/Android/sdk",
-    "maui.configuration.javaSdkPreferredPath": "/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home",
-    "editor.hover.delay": 600,
-    "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
-    "workbench.activityBar.location": "hidden",
-    "chat.commandCenter.enabled": false,
-    "workbench.layoutControl.enabled": false,
-    "window.commandCenter": false,
-    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-    // helps with neovim constantly popping up output view
-    // see https://github.com/vscode-neovim/vscode-neovim/issues/2099 
-    "workbench.view.showQuietly": {
-      "workbench.panel.output": true
-    }
+    "file:///Users/klcantrell/.vscode/extensions/continue.continue-1.2.15-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ],
+    "file:///Users/klcantrell/.vscode/extensions/continue.continue-1.2.16-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ]
+  },
+  "continue.showInlineTip": false,
+  "python.languageServer": "Pylance",
+  "chat.viewSessions.orientation": "stacked",
+  "notebook.lineNumbers": "on",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "Night Owl (No Italics)",
+  // "python.defaultInterpreterPath": "/Users/klcantrell/dev/bourke-ml-and-ds-course/sample_project/env/bin/python",
+  // "mypy-type-checker.args": [
+  //     "--ignore-missing-imports"
+  // ],
+  // "mypy-type-checker.path": [
+  //     "/opt/homebrew/Caskroom/miniforge/base/envs/python_3.11/bin/mypy"
+  // ],
+  // "python.analysis.extraPaths": [
+  //     "/Users/klcantrell/dev/bourke-ml-and-ds-course/sample_project/env"
+  // ]
 }
