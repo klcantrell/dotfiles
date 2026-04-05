@@ -223,7 +223,7 @@
   {
     "key": "ctrl+x",
     "command": "runCommands",
-    "when": "editorTextFocus && neovim.init && neovim.mode == insert'",
+    "when": "editorTextFocus && neovim.init && neovim.mode == 'insert'",
     "args": {
       "commands": [
         {
@@ -236,7 +236,7 @@
   {
     "key": "j",
     "command": "runCommands",
-    "when": "editorTextFocus && neovim.init && neovim.mode != insert'",
+    "when": "editorTextFocus && neovim.init && neovim.mode != 'insert'",
     "args": {
       "commands": [
         {
@@ -249,7 +249,7 @@
   {
     "key": "k",
     "command": "runCommands",
-    "when": "editorTextFocus && neovim.init && neovim.mode != insert'",
+    "when": "editorTextFocus && neovim.init && neovim.mode != 'insert'",
     "args": {
       "commands": [
         {
