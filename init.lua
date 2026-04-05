@@ -16,6 +16,9 @@ keymap("n", "Y", "y$", opts)
 keymap("v", "<leader>p", "\"_dP", opts)
 keymap("v", "<leader>d", "\"_d", opts)
 
+-- another way to exit to normal (ESC and ctrl-c still work)
+keymap("i", "<C-x>", "<Esc>", opts)
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -35,7 +38,7 @@ keymap({"n", "v"}, "<leader>R", "<cmd>lua require('vscode').action('workbench.vi
 keymap({"n", "v"}, "gh", "<cmd>lua require('vscode').action('editor.action.showHover')<CR>")  
 keymap({"n", "v"}, "gr", "<cmd>lua require('vscode').action('editor.action.goToReferences')<CR>")  
 keymap({"n", "v"}, "gR", "<cmd>lua require('vscode').action('references-view.findReferences')<CR>")  
-keymap({"n", "v"}, "gj", "<cmd>lua require('vscode').action('workbench.action.joinAllGroups')<CR>")  
+-- keymap({"n", "v"}, "gj", "<cmd>lua require('vscode').action('workbench.action.joinAllGroups')<CR>")  
 keymap({"n", "v"}, "gX", "<cmd>lua require('vscode').action('workbench.action.closeAllEditors')<CR>")  
 keymap({"n", "v"}, "gE", "<cmd>lua require('vscode').action('workbench.files.action.showActiveFileInExplorer')<CR>")  
 keymap({"n", "v"}, "<C-l>", "<cmd>lua require('vscode').action('workbench.action.focusRightGroup')<CR>")  
