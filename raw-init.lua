@@ -547,7 +547,8 @@ local servers = {
       },
     },
   },
-  -- tsserver = {},
+  pyrefly = {},
+  ts_ls = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = {
@@ -662,6 +663,7 @@ require("nvim-tree").setup({
   view = {
     width = 40,
     relativenumber = true,
+    side = "right"
   }
 })
 
@@ -692,11 +694,14 @@ vim.api.nvim_create_autocmd("FileType", {
   group = swift_lsp,
 })
 
+-- another way to exit to normal (ESC and ctrl-c still work)
+vim.keymap.set('i', '<C-x>', '<Esc>', { desc = 'Return to Normal Mode' })
+
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
--- vim.api.nvim_set_keymap("n", "<C-j>", "<C-W>j", { noremap=true })
--- vim.api.nvim_set_keymap("n", "<C-k>", "<C-W>k", { noremap=true })
--- vim.api.nvim_set_keymap("n", "<C-h>", "<C-W>h", { noremap=true })
--- vim.api.nvim_set_keymap("n", "<C-l>", "<C-W>l", { noremap=true })
+vim.api.nvim_set_keymap("n", "<C-j>", "<C-W>j", { noremap=true })
+vim.api.nvim_set_keymap("n", "<C-k>", "<C-W>k", { noremap=true })
+vim.api.nvim_set_keymap("n", "<C-h>", "<C-W>h", { noremap=true })
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-W>l", { noremap=true })
 vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
 vim.api.nvim_set_keymap("n", "N", "Nzz", { noremap = true })
@@ -708,10 +713,10 @@ vim.api.nvim_set_keymap("n", "<", ":vertical res -2<CR>", { noremap = true })
 
 vim.api.nvim_set_keymap("v", "<leader>p", "\"_dP", { noremap = true })
 vim.api.nvim_set_keymap("v", "<leader>d", "\"_d", { noremap = true })
+vim.keymap.set("n", "<leader>e", function() vim.cmd [[ NvimTreeToggle ]] end,
+  { desc = 'Toggle file [E]xplorer with nvim-tree', noremap = true })
 vim.keymap.set("n", "<leader>H", function() vim.cmd [[ set hlsearch! ]] end,
   { desc = 'Toggle [h]lsearch', noremap = true })
-vim.keymap.set("n", "<leader>E", function() vim.cmd [[ NvimTreeToggle ]] end,
-  { desc = 'Toggle file [E]xplorer with nvim-tree', noremap = true })
 
 -- vim.api.nvim_set_keymap("i", "<C-[", "<Esc>", { noremap = true })
 
