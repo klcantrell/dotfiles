@@ -627,7 +627,7 @@ cmp.setup {
 
 -- MY STUFF
 
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 vim.opt.wrap = false
 vim.opt.cursorline = true
 
@@ -698,23 +698,30 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.keymap.set('i', '<C-x>', '<Esc>', { desc = 'Return to Normal Mode' })
 
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
+vim.api.nvim_set_keymap("v", "<leader>p", "\"_dP", { noremap = true })
+vim.api.nvim_set_keymap("v", "<leader>d", "\"_d", { noremap = true })
+
 vim.api.nvim_set_keymap("n", "<C-j>", "<C-W>j", { noremap=true })
 vim.api.nvim_set_keymap("n", "<C-k>", "<C-W>k", { noremap=true })
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-W>h", { noremap=true })
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-W>l", { noremap=true })
+
 vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
 vim.api.nvim_set_keymap("n", "N", "Nzz", { noremap = true })
 vim.api.nvim_set_keymap("n", "n", "nzz", { noremap = true })
+
 vim.api.nvim_set_keymap("n", "+", ":res +2<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "_", ":res -2<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", ">", ":vertical res +2<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<", ":vertical res -2<CR>", { noremap = true })
 
-vim.api.nvim_set_keymap("v", "<leader>p", "\"_dP", { noremap = true })
-vim.api.nvim_set_keymap("v", "<leader>d", "\"_d", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-Left>", ":tabprevious<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-Right>", ":tabnext<CR>", { noremap = true })
+
+
 vim.keymap.set("n", "<leader>e", function() vim.cmd [[ NvimTreeToggle ]] end,
-  { desc = 'Toggle file [E]xplorer with nvim-tree', noremap = true })
+  { desc = 'Toggle file [e]xplorer with nvim-tree', noremap = true })
 vim.keymap.set("n", "<leader>H", function() vim.cmd [[ set hlsearch! ]] end,
   { desc = 'Toggle [h]lsearch', noremap = true })
 
