@@ -181,7 +181,8 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
     "notebook.focusedCellBorder": "#c792ea",
-    "statusBar.debuggingBackground": "#9445c9",
+    "statusBar.debuggingBackground": "#c792ea",
+    "statusBar.debuggingForeground": "#000000"
   },
   "explorer.compactFolders": false,
   "editor.guides.bracketPairs": true,
@@ -226,7 +227,7 @@
     "",
   ],
   "maui.configuration.androidSdkPreferredPath": "/Users/klcantrell/Library/Android/sdk",
-  "maui.configuration.javaSdkPreferredPath": "/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home",
+  "maui.configuration.javaSdkPreferredPath": "/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home",
   "editor.hover.delay": 600,
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
@@ -268,28 +269,14 @@
   "terminal.integrated.macOptionIsMeta": true,
   "terminal.integrated.suggest.enabled": false,
   "claudeCode.preferredLocation": "sidebar",
-  "yaml.schemas": {
-    "file:///Users/klcantrell/.vscode/extensions/continue.continue-1.2.11-darwin-arm64/config-yaml-schema.json": [
-      ".continue/**/*.yaml"
-    ],
-    "file:///Users/klcantrell/.vscode/extensions/continue.continue-1.2.14-darwin-arm64/config-yaml-schema.json": [
-      ".continue/**/*.yaml"
-    ],
-    "file:///Users/klcantrell/.vscode/extensions/continue.continue-1.2.15-darwin-arm64/config-yaml-schema.json": [
-      ".continue/**/*.yaml"
-    ],
-    "file:///Users/klcantrell/.vscode/extensions/continue.continue-1.2.16-darwin-arm64/config-yaml-schema.json": [
-      ".continue/**/*.yaml"
-    ]
-  },
   "continue.showInlineTip": false,
   "python.languageServer": "Pylance",
-  "chat.viewSessions.orientation": "stacked",
   "notebook.lineNumbers": "on",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
   "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "Night Owl (No Italics)",
+  "workbench.colorTheme": "Tokyo Night",
+  "chat.viewSessions.orientation": "stacked",
   // "python.defaultInterpreterPath": "/Users/klcantrell/dev/bourke-ml-and-ds-course/sample_project/env/bin/python",
   // "mypy-type-checker.args": [
   //     "--ignore-missing-imports"
