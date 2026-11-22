@@ -168,11 +168,12 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'folke/tokyonight.nvim',
+    lazy = false,
     priority = 1000,
+    opts = {},
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme('tokyonight-night')
     end,
   },
 
@@ -184,7 +185,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'nightfly',
         component_separators = '|',
         section_separators = '',
       },
@@ -331,15 +332,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
-require('onedark').setup {
-  style = "deep",
-  colors = {
-    bg2 = "#51678f",
-  }
-}
-require('onedark').load()
-
-
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
@@ -350,6 +342,7 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
+    path_display = { "smart" },
   },
 }
 
@@ -661,10 +654,15 @@ vim.opt.termguicolors = true
 -- setup nvim-tree
 require("nvim-tree").setup({
   view = {
-    width = 40,
-    relativenumber = true,
-    side = "right"
-  }
+    -- width = 40,
+    -- relativenumber = true,
+    -- side = "right"
+  },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+    },
+  },
 })
 
 -- setup ufo
@@ -694,9 +692,6 @@ vim.api.nvim_create_autocmd("FileType", {
   group = swift_lsp,
 })
 
--- another way to exit to normal (ESC and ctrl-c still work)
-vim.keymap.set('i', '<C-x>', '<Esc>', { desc = 'Return to Normal Mode' })
-
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
 vim.api.nvim_set_keymap("v", "<leader>p", "\"_dP", { noremap = true })
 vim.api.nvim_set_keymap("v", "<leader>d", "\"_d", { noremap = true })
@@ -720,12 +715,10 @@ vim.api.nvim_set_keymap("n", "<C-Left>", ":tabprevious<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-Right>", ":tabnext<CR>", { noremap = true })
 
 
-vim.keymap.set("n", "<leader>e", function() vim.cmd [[ NvimTreeToggle ]] end,
+vim.keymap.set("n", "<leader>e", function() require("nvim-tree.api").tree.toggle({ current_window = true }) end,
   { desc = 'Toggle file [e]xplorer with nvim-tree', noremap = true })
 vim.keymap.set("n", "<leader>H", function() vim.cmd [[ set hlsearch! ]] end,
   { desc = 'Toggle [h]lsearch', noremap = true })
-
--- vim.api.nvim_set_keymap("i", "<C-[", "<Esc>", { noremap = true })
 
 -- emulate surround add bindings
 
